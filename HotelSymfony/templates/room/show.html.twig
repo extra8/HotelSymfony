@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Camera{% endblock %}
+
+{% block body %}
+    <center>
+    <h1>&nbsp</h1>
+    <br>
+
+    <div>
+    <table class="table" style="width: auto;">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ room.Id }}</td>
+            </tr>
+            <tr>
+                <th>Are aer conditionat</th>
+                <td>{{ room.isAirConditioned ? 'Da' : 'Nu' }}</td>
+            </tr>
+            <tr>
+                <th>Cu balcon</th>
+                <td>{{ room.HasBalcony ? 'Da' : 'Nu' }}</td>
+            </tr>
+            <tr>
+                <th>Capacitate</th>
+                <td>{{ room.Capacity }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>
+    <a href="{{ path('room_index') }}">Inapoi</a> | <a href="{{ path('room_edit', {'Id': room.Id}) }}">Editare</a>
+    </h4>
+    </div>
+
+    <br>
+    {{ include('room/_delete_form.html.twig') }}
+{% endblock %}

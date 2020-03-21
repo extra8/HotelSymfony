@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('reservation_delete', {'Id': reservation.Id}) }}" onsubmit="return confirm('Sigur stergeti rezervarea?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ reservation.Id) }}">
+    <button class="btn">Sterge</button>
+</form>

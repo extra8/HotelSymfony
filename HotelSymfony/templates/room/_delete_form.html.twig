@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('room_delete', {'Id': room.Id}) }}" onsubmit="return confirm('Sigur stergeti camera?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ room.Id) }}">
+    <button class="btn">Sterge</button>
+</form>

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rezervari{% endblock %}
+
+{% block body %}
+    <center>
+    <br><br>
+
+    <div style=" padding-left: 3%; padding-right:3%; ">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Prenume</th>
+                <th>Nume</th>
+                <th>Venire</th>
+                <th>Plecare</th>
+                <th>Actiuni</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.Id }}</td>
+                <td>{{ reservation.customer.FirstName }}</td>
+                <td>{{ reservation.customer.LastName }}</td>
+                <td>{{ reservation.StartDate ? reservation.StartDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ reservation.EndDate ? reservation.EndDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('reservation_show', {'Id': reservation.Id}) }}">Detalii</a>
+                    <a href="{{ path('reservation_edit', {'Id': reservation.Id}) }}">Editare</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Niciun rezultat</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <center><a href="{{ path('reservation_new') }}"><h4>Rezervare noua</h4></a>
+    </div>
+{% endblock %}

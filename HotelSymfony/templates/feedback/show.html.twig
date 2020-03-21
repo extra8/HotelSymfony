@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recenzii{% endblock %}
+
+{% block body %}
+    <center>
+    <h1>&nbsp</h1>
+    <br>
+
+    <div>
+    <table class="table" style="width: auto;">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ feedback.Id }}</td>
+            </tr>
+            <tr>
+                <th>Mesaj</th>
+                <td>{{ feedback.Message }}</td>
+            </tr>
+            <tr>
+                <th>Stele</th>
+                <td>{{ feedback.Score }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>
+    <a href="{{ path('feedback_index') }}">Inapoi</a> | <a href="{{ path('feedback_edit', {'Id': feedback.Id}) }}">Editare</a>
+    </h4>
+    </div>
+    
+    <br>
+    {{ include('feedback/_delete_form.html.twig') }}
+{% endblock %}

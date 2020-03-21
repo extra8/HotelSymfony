@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rezervare{% endblock %}
+
+{% block body %}
+    <center>
+    <h1>&nbsp</h1>
+    <br>
+
+    <div>
+    <table class="table" style="width: auto;">
+        <tbody>
+            <tr>
+                <th>Venire</th>
+                <td>{{ reservation.StartDate ? reservation.StartDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Plecare</th>
+                <td>{{ reservation.EndDate ? reservation.EndDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>
+    <a href="{{ path('reservation_index') }}">Inapoi</a> | <a href="{{ path('reservation_edit', {'Id': reservation.Id}) }}">Editare</a>
+    </h4>
+    </div>
+
+    <br>
+    {{ include('reservation/_delete_form.html.twig') }}
+{% endblock %}

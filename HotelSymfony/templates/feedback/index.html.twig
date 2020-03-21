@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recenzii{% endblock %}
+
+{% block body %}
+    <center>
+    <br><br>
+
+    <div style=" padding-left: 3%; padding-right:3%; ">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Mesaj</th>
+                <th>Stele</th>
+                <th>Actiuni</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for feedback in feedback %}
+            <tr>
+                <td>{{ feedback.Id }}</td>
+                <td>{{ feedback.Message }}</td>
+                <td>{{ feedback.Score }}</td>
+                <td>
+                    <a href="{{ path('feedback_show', {'Id': feedback.Id}) }}">Detalii</a>
+                    <a href="{{ path('feedback_edit', {'Id': feedback.Id}) }}">Editare</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Niciun rezultat</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <center><a href="{{ path('feedback_new') }}"><h4>Recenzie noua</h4></a>
+    </div>
+{% endblock %}

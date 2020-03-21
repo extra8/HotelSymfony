@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editare recenzie{% endblock %}
+
+{% block body %}
+    <center>
+    <h1>&nbsp</h1>
+
+    {{ include('feedback/_form.html.twig', {'button_label': 'Actualizare'}) }}
+
+    <br>
+    <a href="{{ path('feedback_index') }}"><h4>Inapoi</h4></a>
+
+    <br>
+    {{ include('feedback/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editare oaspete{% endblock %}
+
+{% block body %}
+    <center>
+    <h1>&nbsp</h1>
+
+    {{ include('customer/_form.html.twig', {'button_label': 'Actualizare'}) }}
+
+    <br>
+    <a href="{{ path('customer_index') }}"><h4>Inapoi</h4></a>
+
+    <br>
+    {{ include('customer/_delete_form.html.twig') }}
+{% endblock %}

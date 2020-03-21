@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Camera noua{% endblock %}
+
+{% block body %}
+    <center>
+    <h1>&nbsp</h1>
+
+    {{ include('room/_form.html.twig') }}
+
+    <br>
+    <a href="{{ path('room_index') }}"><h4>Inapoi</h4></a>
+{% endblock %}

@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="../../assets/logo2.ico" />
+        <title>Hotel Symfony - Admin</title>
+        {% block stylesheets %}
+            <style>
+                .menu {
+                    line-height: 1;
+                    margin: 0 auto 3em;
+                }
+
+                .menu__list {
+                    position: relative;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    color:white;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+
+                .menu__item {
+                    display: block;
+                    margin: 1em 0;
+                    font-size: 1.8em;
+                    font-weight: bold;
+                    color: white;
+                    padding-top: 10px;
+                    padding-right: 30px;
+                }
+
+                .menu__link {
+                    font-weight: bold;
+                    display: block;
+                    cursor: pointer;
+                    color: white;
+                }
+
+                .menu__link:hover{
+                    color:white;
+                }
+            </style>
+        {% endblock %}
     </head>
-    <body>
+    <body background="../../assets/greek-vase.png">
+        <div style="background: linear-gradient(to right, #faa619, #682e17); width=100%;">
+            <img src="../../assets/logo.png" style="padding-left:3%">   
+            <nav class="menu" style="display:inline-block; float:right;">
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="{{ path('customer_index') }}" class="menu__link"><span class="menu__helper">OASPETI</span></a></li>
+                    <li class="menu__item"><a href="{{ path('reservation_index') }}" class="menu__link"><span class="menu__helper">REZERVARI</span></a></li>
+                    <li class="menu__item"><a href="{{ path('room_index') }}" class="menu__link"><span class="menu__helper">CAMERE</span></a></li>
+                    <li class="menu__item"><a href="{{ path('feedback_index') }}" class="menu__link"><span class="menu__helper">RECENZII</span></a></li>
+                </ul>
+           </nav>                  
+        </div>
+
         {% block body %}{% endblock %}
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>

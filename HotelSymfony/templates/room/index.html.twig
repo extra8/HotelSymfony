@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Camere{% endblock %}
+
+{% block body %}
+    <center>
+    <br><br>
+
+    <div style=" padding-left: 3%; padding-right:3%; ">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Are aer conditionat</th>
+                <th>Cu balcon</th>
+                <th>Capacitate</th>
+                <th>Actiuni</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for room in rooms %}
+            <tr>
+                <td>{{ room.Id }}</td>
+                <td>{{ room.isAirConditioned ? 'Da' : 'Nu' }}</td>
+                <td>{{ room.HasBalcony ? 'Da' : 'Nu' }}</td>
+                <td>{{ room.Capacity }}</td>
+                <td>
+                    <a href="{{ path('room_show', {'Id': room.Id}) }}">Detalii</a>
+                    <a href="{{ path('room_edit', {'Id': room.Id}) }}">Editare</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Niciun rezultat</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="{{ path('room_new') }}"><h4>Camera noua</h4></a>
+    </div>
+{% endblock %}

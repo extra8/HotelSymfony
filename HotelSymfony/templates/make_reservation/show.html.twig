@@ -1,0 +1,50 @@
+{% extends 'siteBase.html.twig' %}
+
+{% block title %}MakeReservation{% endblock %}
+
+{% block body %}
+    <h1>&nbsp</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ make_reservation.id }}</td>
+            </tr>
+            <tr>
+                <th>FirstName</th>
+                <td>{{ make_reservation.FirstName }}</td>
+            </tr>
+            <tr>
+                <th>LastName</th>
+                <td>{{ make_reservation.LastName }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ make_reservation.Phone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ make_reservation.Email }}</td>
+            </tr>
+            <tr>
+                <th>StartDate</th>
+                <td>{{ make_reservation.StartDate ? make_reservation.StartDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EndDate</th>
+                <td>{{ make_reservation.EndDate ? make_reservation.EndDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Guests</th>
+                <td>{{ make_reservation.guests }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('make_reservation_index') }}">back to list</a>
+
+    <a href="{{ path('make_reservation_edit', {'id': make_reservation.id}) }}">edit</a>
+
+    {{ include('make_reservation/_delete_form.html.twig') }}
+{% endblock %}

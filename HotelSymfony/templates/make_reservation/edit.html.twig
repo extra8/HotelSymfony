@@ -1,0 +1,13 @@
+{% extends 'siteBase.html.twig' %}
+
+{% block title %}Edit MakeReservation{% endblock %}
+
+{% block body %}
+    <h1>&nbsp</h1>
+
+    {{ include('make_reservation/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('make_reservation_index') }}">back to list</a>
+
+    {{ include('make_reservation/_delete_form.html.twig') }}
+{% endblock %}

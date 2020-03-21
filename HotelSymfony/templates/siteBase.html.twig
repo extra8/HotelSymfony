@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/x-icon" href="assets/logo2.ico" />
+        <title>Hotel Symfony</title>
+        {% block stylesheets %}
+            <style>
+                .menu {
+                    line-height: 1;
+                    margin: 0 auto 3em;
+                }
+
+                .menu__list {
+                    position: relative;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+
+                .menu__item {
+                    display: block;
+                    margin: 1em 0;
+                }
+
+                .menu__link {
+                    font-size: 1.8em;
+                    font-weight: bold;
+                    display: block;
+                    padding: 1em;
+                    cursor: pointer;
+                    color: white;
+                }
+
+                .menu__link:hover{
+                    color:white;
+                }
+
+                .fa {
+                    border-color: white;
+                    padding-top: 20px;
+                    padding-left: 50px;
+                    padding-right: 50px;
+                    font-size: 30px;
+                    width: 30px;
+                    text-align: center;
+                    text-decoration: none;
+                    border-radius: 50%;
+                    color:white;
+                }
+
+                .fa:hover {                    
+                    color:#682e17;
+                }
+         
+            </style>
+        {% endblock %}
+    </head>
+    <body background="assets/greek-vase.png">
+        <img src="assets/galerie-foto-hotel-rogge.jpg" width:100%">
+        <div style="background: linear-gradient(to right, #faa619, #682e17); width=100%;">
+        <a href="{{ path('home_index') }}"><img src="assets/logo.png" style="padding-left:3%">
+            <nav class="menu" style="display:inline-block; float:right;">
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="{{ path('home_index') }}" class="menu__link"><span class="menu__helper">ACASA</span></a></li>
+                    <li class="menu__item"><a href="{{ path('about') }}" class="menu__link"><span class="menu__helper">DESPRE NOI</span></a></li>
+                    <li class="menu__item"><a href="{{ path('contact') }}" class="menu__link"><span class="menu__helper">CONTACT</span></a></li>
+                    <li class="menu__item"><a href="{{ path('make_reservation_new') }}" class="menu__link"><span class="menu__helper">REZERVA</span></a></li>
+                </ul>
+           </nav>                      
+        </div>    
+        
+        <center>
+        {% block body %}{% endblock %}
+        </center>
+
+        {% block javascripts %}{% endblock %}
+        
+        <br><br>
+        
+        <center>
+        <div style="width:100%; height:80px; background: linear-gradient(to right, #faa619, #682e17);">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-youtube"></a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+    <table><h3>
+    <tr>
+        <td><br>Rezervare:   <td><br>{{ form_widget(form.Reservation) }}
+    <tr>
+        <td><br>Mesaj:   <td><br>{{ form_widget(form.Message) }} 
+    <tr>
+        <td><br>Stele:   <td><br>{{ form_widget(form.Score) }} 
+    </h3></table>
+    <br>
+    <button class="btn">{{ button_label|default('Salvare') }}</button>
+{{ form_end(form) }}

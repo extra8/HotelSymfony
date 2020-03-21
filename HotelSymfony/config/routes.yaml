@@ -1,3 +1,81 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+index:
+  path: /
+  controller: App\Controller\HomeController::index 
+about:
+  path: /about
+  controller: App\Controller\HomeController::about 
+contact:
+  path: /contact
+  controller: App\Controller\HomeController::contact 
+reserve:
+  path: /reserve
+  controller: App\Controller\MakeReservationController::new 
+
+
+room:
+  path: /room
+  controller: App\Controller\RoomController::index 
+roomNew:
+  path: /room/new
+  controller: App\Controller\RoomController::new 
+roomShow:
+  path: /room/show
+  controller: App\Controller\RoomController::show 
+roomEdit:
+  path: /room/edit
+  controller: App\Controller\RoomController::edit 
+roomDelete:
+  path: /room/delete
+  controller: App\Controller\RoomController::delete 
+ 
+feedback:
+  path: /feedback
+  controller: App\Controller\FeedbackController::index 
+feedbackNew:
+  path: /feedback/new
+  controller: App\Controller\FeedbackController::new 
+feedbackShow:
+  path: /feedback/show
+  controller: App\Controller\FeedbackController::show 
+feedbackEdit:
+  path: /feedback/edit
+  controller: App\Controller\FeedbackController::edit 
+feedbackDelete:
+  path: /feedback/delete
+  controller: App\Controller\FeedbackController::delete 
+
+customer:
+  path: /customer
+  controller: App\Controller\CustomerController::index 
+customerNew:
+  path: /customer/new
+  controller: App\Controller\CustomerController::new 
+customerShow:
+  path: /customer/show
+  controller: App\Controller\CustomerController::show 
+customerEdit:
+  path: /customer/edit
+  controller: App\Controller\CustomerController::edit 
+customerDelete:
+  path: /customer/delete
+  controller: App\Controller\CustomerController::delete 
+
+reservation:
+  path: /reservation
+  controller: App\Controller\ReservationController::index 
+reservationNew:
+  path: /reservation/new
+  controller: App\Controller\ReservationController::new 
+reservationShow:
+  path: /reservation/show
+  controller: App\Controller\ReservationController::show 
+reservationEdit:
+  path: /reservation/edit
+  controller: App\Controller\ReservationController::edit 
+reservationDelete:
+  path: /reservation/delete
+  controller: App\Controller\ReservationController::delete 

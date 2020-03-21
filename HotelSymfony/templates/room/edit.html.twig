@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editare camera{% endblock %}
+
+{% block body %}
+    <center>
+    <h1>&nbsp</h1>
+
+    {{ include('room/_form.html.twig', {'button_label': 'Actualizare'}) }}
+
+    <br>
+    <a href="{{ path('room_index') }}">Inapoi</a>
+
+    <br>
+    {{ include('room/_delete_form.html.twig') }}
+{% endblock %}

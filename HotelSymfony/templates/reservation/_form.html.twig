@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+    <center>
+    <table><h3>
+    <tr>
+        <td><br>Oaspete:   <td><br>{{ form_widget(form.Customer) }} 
+    <tr>
+        <td><br>Venire:   <td><br>{{ form_widget(form.StartDate) }} 
+    <tr>
+        <td><br>Plecare:   <td><br>{{ form_widget(form.EndDate) }} 
+    <tr>
+        <td><br>Camera:   <td><br>{{ form_widget(form.Room) }} 
+    <tr>
+        <td><br>Id recenzie:   <td><br>{{ form_widget(form.FeedbackId) }} 
+    </h3></table>
+    <br>
+    <button class="btn">{{ button_label|default('Salvare') }}</button>
+    </center>
+{{ form_end(form) }}

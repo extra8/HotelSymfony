@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Oaspete{% endblock %}
+
+{% block body %}
+    <center>
+    <h1>&nbsp</h1>
+    <br>
+
+    <div>
+    <table class="table" style="width: auto;">
+        <tbody>
+            <tr>
+                <th>Prenume</th>
+                <td>{{ customer.FirstName }}</td>
+            </tr>
+            <tr>
+                <th>Nume</th>
+                <td>{{ customer.LastName }}</td>
+            </tr>
+            <tr>
+                <th>Telefon</th>
+                <td>{{ customer.Phone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ customer.Address }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4>
+    <a href="{{ path('customer_index') }}">Inapoi</a> | <a href="{{ path('customer_edit', {'Id': customer.Id}) }}">Editare</a>
+    </h4>
+    </div>
+
+    <br>
+    {{ include('customer/_delete_form.html.twig') }}
+{% endblock %}

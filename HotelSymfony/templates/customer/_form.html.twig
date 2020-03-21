@@ -1,0 +1,16 @@
+{{ form_start(form) }}
+    <center>
+    <table><h3>
+    <tr>
+        <td><br>Prenume:   <td><br>{{ form_widget(form.FirstName) }} 
+    <tr>
+        <td><br>Nume:   <td><br>{{ form_widget(form.LastName) }} 
+    <tr>
+        <td><br>Telefon:    <td><br>{{ form_widget(form.Phone) }} 
+    <tr>
+        <td><br>Email:   <td><br>{{ form_widget(form.Address) }} 
+    </h3></table>
+    <br>
+    <button class="btn">{{ button_label|default('Salvare') }}</button>
+    </center>
+{{ form_end(form) }}

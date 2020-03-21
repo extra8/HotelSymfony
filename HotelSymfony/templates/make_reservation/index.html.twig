@@ -1,0 +1,47 @@
+{% extends 'siteBase.html.twig' %}
+
+{% block title %}MakeReservation index{% endblock %}
+
+{% block body %}
+    <h1>MakeReservation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>StartDate</th>
+                <th>EndDate</th>
+                <th>Guests</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for make_reservation in make_reservations %}
+            <tr>
+                <td>{{ make_reservation.id }}</td>
+                <td>{{ make_reservation.FirstName }}</td>
+                <td>{{ make_reservation.LastName }}</td>
+                <td>{{ make_reservation.Phone }}</td>
+                <td>{{ make_reservation.Email }}</td>
+                <td>{{ make_reservation.StartDate ? make_reservation.StartDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ make_reservation.EndDate ? make_reservation.EndDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ make_reservation.guests }}</td>
+                <td>
+                    <a href="{{ path('make_reservation_show', {'id': make_reservation.id}) }}">show</a>
+                    <a href="{{ path('make_reservation_edit', {'id': make_reservation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('make_reservation_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+    <table><h3>
+    <tr>
+        <td><br>Capacitate:   <td><br>{{ form_widget(form.Capacity) }} 
+    <tr>
+        <td><br>Cu balcon:   <td><br>{{ form_widget(form.HasBalcony) }} 
+    <tr>
+        <td><br>Are aer conditionat:   <td><br>{{ form_widget(form.isAirConditioned) }} 
+    </h3></table>
+    <br>
+    <button class="btn">{{ button_label|default('Salvare') }}</button>
+{{ form_end(form) }}
